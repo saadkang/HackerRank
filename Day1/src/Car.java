@@ -1,5 +1,3 @@
-package car;
-
 /**
  * Created by saadi on 6/7/2017.
  */
@@ -11,14 +9,18 @@ public class Car {
     boolean isTheCarOn = false;
     char condition = 'A';
     String nameOfCar = "Tania";
+    double maxFuel = 16;
+    double currentFuel = 8;
+    double mpg = 26.4;
+    int numberOfPeopleInCar = 1;
 
     public void printVariables(){
         System.out.println("This is the max speed: "+maxSpeed);
         System.out.println("This is the min speed: "+minSpeed);
-        System.out.println("This is the weight of the car: "+weight);
-        System.out.println("Is the car on? "+isTheCarOn);
-        System.out.println("What is the car's condition? "+condition);
-        System.out.println("The name of the car is: "+nameOfCar);
+        System.out.println("This is the weight of the day1: "+weight);
+        System.out.println("Is the day1 on? "+isTheCarOn);
+        System.out.println("What is the day1's condition? "+condition);
+        System.out.println("The name of the day1 is: "+nameOfCar);
     }
     public void wreckCar(){
         condition = 'C';
@@ -29,9 +31,9 @@ public class Car {
     }
 
     public static void main(String[] args) {
-//        Car car = new Car();
-//        car.printVariables();
-//        These above lines are commented out because first the lady on the video created the object using the 'car' as object name
+//        Car day1 = new Car();
+//        day1.printVariables();
+//        These above lines are commented out because first the lady on the video created the object using the 'day1' as object name
         Car familyCar = new Car();
         System.out.println("Family's Car:");
         familyCar.printVariables();
