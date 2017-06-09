@@ -19,62 +19,90 @@ public class Car {
     double mpg = 26.4;
 
     int numberOfPeopleInCar = 1;
+    int maxNumberOfPeopleInCar = 6;
 
-//    f(x, y, z) = x + 1/z - y;
-//    Say x = 5;
-//    f(5) = 5 + 1 = 6;
+//        f(x, y, z) = x + 1/z - y;
+//        Say x = 5;
+//        f(5) = 5 + 1 = 6;
 
-    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn) {
+    public Car(){
+
+    }
+    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn){
         maxSpeed = customMaxSpeed;
         weight = customWeight;
         isTheCarOn = customIsTheCarOn;
     }
 
     public void printVariables() {
-        System.out.println("This is the max speed: " +maxSpeed);
-        System.out.println("This is the min speed: " +minSpeed);
-        System.out.println("The weight of the car.Car is: " +weight);
-        System.out.println("Is the car.Car on? " +isTheCarOn);
-        System.out.println("The condition of the car.Car is: " +condition);
-        System.out.println("The name of the car.Car is: " +nameOfCar);
-        System.out.println("Number of people in the car.Car is: " +numberOfPeopleInCar);
+        System.out.println("This is the max speed: " + maxSpeed);
+        System.out.println("Min Speed: "+minSpeed);
+        System.out.println("Weight: "+weight);
+        System.out.println("Is the Car on? "+isTheCarOn);
+        System.out.println("Condition: "+condition);
+        System.out.println("Car name: "+nameOfCar);
+        System.out.println("People in Car: "+numberOfPeopleInCar);
     }
-    public void upgradeMinSpeed(){
+    public void upgradeMinSpeed() {
         minSpeed = maxSpeed;
         maxSpeed = maxSpeed + 1;
     }
-
     public void getIn(){
 //        numberOfPeopleInCar = numberOfPeopleInCar + 1;
-        numberOfPeopleInCar++;
+//        If there aren't too many people in the Car
+        if (numberOfPeopleInCar < maxNumberOfPeopleInCar){
+//            then someone can get in
+            numberOfPeopleInCar++;
+            System.out.println("Someone got in");
+        }else {
+//            otherwise print out the fact that the Car is full
+            System.out.println("The Car is full "+numberOfPeopleInCar+ " = " +maxNumberOfPeopleInCar);
+        }
     }
-
     public void getOut(){
 //        numberOfPeopleInCar = numberOfPeopleInCar - 1;
-        numberOfPeopleInCar--;
+//        if there's people in the Car
+        if (numberOfPeopleInCar > 0){
+//            then tell one person to get out
+            numberOfPeopleInCar--;
+        }else {
+//            otherwise no one can get out and we'll print that.
+            System.out.println("No one is in the Car "+numberOfPeopleInCar);
+        }
     }
-
-    public double howManyMilesTillOutOfGas() {
+    public double howManyMilesTillOutOfGas(){
         return currentFuel * mpg;
     }
-
-    public double maxMilesPerFillUp() {
+    public double maxMilesPerFillUp(){
         return maxFuel * mpg;
     }
-
+    public void turnTheCarOn(){
+//        The statement inside the if brackets is saying 'isTheCar not on' which is the same thing as 'isTheCarOn == false'
+//        If the Car isn't on...
+        if (!isTheCarOn){
+//            turn it on
+            isTheCarOn = true;
+        }else {
+//            otherwise print the fact it's on'
+            System.out.println("The Car is already on "+isTheCarOn);
+        }
+    }
     public static void main(String[] args) {
-        Car birthdayPresent = new Car(500, 5000.545, true);
-        System.out.println("Birthday car.Car v1");
-        birthdayPresent.printVariables();
-        birthdayPresent.getIn();
-        birthdayPresent.getIn();
-        birthdayPresent.getIn();
-        System.out.println("Miles left: " + birthdayPresent.howManyMilesTillOutOfGas());
-        System.out.println("Max Miles: " + birthdayPresent.maxMilesPerFillUp());
-        System.out.println("Birthday car.Car v2");
-        birthdayPresent.printVariables();
-        birthdayPresent.getOut();
-        System.out.println("Birthday car.Car v3");
-        birthdayPresent.printVariables();
+        Car tommyCar = new Car();
+        tommyCar.getOut();
+        tommyCar.getOut();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.turnTheCarOn();
+        tommyCar.turnTheCarOn();
+
+//        System.out.println("Christmas Car:");
+//        Car christmasPresent = new Car(550, 2000, false);
+//        christmasPresent.printVariables();
     }
 }
