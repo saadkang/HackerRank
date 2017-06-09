@@ -1,3 +1,5 @@
+package car;
+
 /**
  * Created by saadi on 6/8/2017.
  */
@@ -31,17 +33,12 @@ public class Car {
     public void printVariables() {
         System.out.println("This is the max speed: " +maxSpeed);
         System.out.println("This is the min speed: " +minSpeed);
-        System.out.println("The weight of the Car is: " +weight);
-        System.out.println("Is the Car on? " +isTheCarOn);
-        System.out.println("The condition of the Car is: " +condition);
-        System.out.println("The name of the Car is: " +nameOfCar);
-        System.out.println("Number of people in the Car is: " +numberOfPeopleInCar);
+        System.out.println("The weight of the car.Car is: " +weight);
+        System.out.println("Is the car.Car on? " +isTheCarOn);
+        System.out.println("The condition of the car.Car is: " +condition);
+        System.out.println("The name of the car.Car is: " +nameOfCar);
+        System.out.println("Number of people in the car.Car is: " +numberOfPeopleInCar);
     }
-
-    public void wreckCar(){
-        condition = 'C';
-    }
-
     public void upgradeMinSpeed(){
         minSpeed = maxSpeed;
         maxSpeed = maxSpeed + 1;
@@ -67,17 +64,17 @@ public class Car {
 
     public static void main(String[] args) {
         Car birthdayPresent = new Car(500, 5000.545, true);
-        System.out.println("Birthday Car v1");
+        System.out.println("Birthday car.Car v1");
         birthdayPresent.printVariables();
         birthdayPresent.getIn();
         birthdayPresent.getIn();
         birthdayPresent.getIn();
         System.out.println("Miles left: " + birthdayPresent.howManyMilesTillOutOfGas());
         System.out.println("Max Miles: " + birthdayPresent.maxMilesPerFillUp());
-        System.out.println("Birthday Car v2");
+        System.out.println("Birthday car.Car v2");
         birthdayPresent.printVariables();
         birthdayPresent.getOut();
-        System.out.println("Birthday Car v3");
+        System.out.println("Birthday car.Car v3");
         birthdayPresent.printVariables();
     }
 }
