@@ -54,6 +54,6 @@ public class DictionaryPractice {
 //        Clear our dictionary
         shopingList.clear();
         System.out.println(shopingList.toString());
-        
+
     }
 }
