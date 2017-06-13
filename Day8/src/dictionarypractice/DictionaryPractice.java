@@ -14,10 +14,10 @@ public class DictionaryPractice {
 //        Putting things inside our dictionary
         englSpanDictionary.put("Monday", "Lunes");
         englSpanDictionary.put("Tuesday", "Martes");
-        englSpanDictionary.put("Wednesday", "Miercoles");
+        englSpanDictionary.put("Wednesday", "Miércoles");
         englSpanDictionary.put("Thursday", "Jueves");
         englSpanDictionary.put("Friday", "Viernes");
-        englSpanDictionary.put("Saturday", "Sabado");
+        englSpanDictionary.put("Saturday", "Sábado");
         englSpanDictionary.put("Sunday", "Domingo");
 //        Retrieve things from our dictionary
         System.out.println(englSpanDictionary.get("Monday"));
@@ -33,10 +33,8 @@ public class DictionaryPractice {
         System.out.println(englSpanDictionary.values());
 //        Print out size
         System.out.println("The size of our Dictionary is: "+englSpanDictionary.size());
-
         System.out.println();
         System.out.println();
-
 //        Shopping List
         Map<String, Boolean> shopingList = new HashMap<String, Boolean>();
 //        Put some stuff in dictionary
@@ -51,9 +49,18 @@ public class DictionaryPractice {
         System.out.println(shopingList.get("Oreo"));
 //        Key-value Pairs Print Out
         System.out.println(shopingList.toString());
+//        Is Empty?
+        System.out.println(shopingList.isEmpty());
+//        Remove things
+        shopingList.remove("Eggs");
+//        Replace values for a certain key
+        shopingList.replace("Bread", Boolean.FALSE);
+//        Key-vaule Pairs Print Out
+        System.out.println(shopingList.toString());
 //        Clear our dictionary
         shopingList.clear();
         System.out.println(shopingList.toString());
-
+//        Is Empty?
+        System.out.println(shopingList.isEmpty());
     }
 }
